@@ -1,0 +1,33 @@
+<mvc:View
+    controllerName="smarttableannotations.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+					<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="expensesSet" 
+    useToolbar="false" showFilterConfiguration="false">
+	<smartFilterBar:controlConfiguration>
+        <smartFilterBar:ControlConfiguration key="Empid" 
+            visibleInAdvancedArea="true"
+            preventInitialDataFetchInValueHelpDialog="false">
+        </smartFilterBar:ControlConfiguration>
+    </smartFilterBar:controlConfiguration>
+</smartFilterBar:SmartFilterBar>
+					<smartTable:SmartTable id="ProductsSmartTable" entitySet="expensesSet" 
+    smartFilterId="smartFilterBar" header="Products" showRowCount="true"
+    useExportToExcel="false" useVariantManagement="true" enableAutoBinding="true"
+    useTablePersonalisation="true" tableType="ResponsiveTable">
+</smartTable:SmartTable>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
